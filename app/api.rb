@@ -1,7 +1,7 @@
 module Acme
   class API < Grape::API
     prefix 'api'
-    format :json
+    default_format :json #to support swagger docs .json data
     mount ::Acme::Ping
     mount ::Acme::RescueFrom
     mount ::Acme::PathVersioning
@@ -12,6 +12,6 @@ module Acme
     mount ::Acme::ContentType
     mount ::Acme::UploadFile
     mount ::Acme::Entities::API
-    add_swagger_documentation api_version: 'v1'
+    add_swagger_documentation api_version: 'v1', mount_path: '/docs'
   end
 end

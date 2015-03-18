@@ -18,6 +18,7 @@ group :development do
   gem 'guard-bundler', '~> 2.1.0'
   gem 'guard-rack', '~> 2.0.0'
   gem 'rubocop', '0.28.0'
+  gem 'byebug'
 end
 
 group :test do
