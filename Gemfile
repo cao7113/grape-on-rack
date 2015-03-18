@@ -1,4 +1,5 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
+source "http://ruby.taobao.org"
 
 gem 'rack', '~> 1.6.0'
 gem 'grape', '~> 0.10.1'
