@@ -4,14 +4,17 @@ module Acme
       attr_accessor :rang
     end
     format :json
+
     desc 'Returns pong.'
     get :ring do
       { rang: PostPut.rang }
     end
+
     post :ring do
       result = (PostPut.rang += 1)
       { rang: result }
     end
+
     params do
       requires :count, type: Integer
     end

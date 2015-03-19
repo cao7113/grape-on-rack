@@ -2,37 +2,38 @@
 <html>
 <head>
   <title>Swagger UI</title>
-  <link href='apidocs/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='apidocs/css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='apidocs/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='apidocs/css/reset.css' media='print' rel='stylesheet' type='text/css'/>
-  <link href='apidocs/css/screen.css' media='print' rel='stylesheet' type='text/css'/>
-  <script type="text/javascript" src="apidocs/lib/shred.bundle.js"></script>
-  <script src='apidocs/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/jquery.slideto.min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/jquery.wiggle.min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/handlebars-2.0.0.js' type='text/javascript'></script>
-  <script src='apidocs/lib/underscore-min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/backbone-min.js' type='text/javascript'></script>
-  <script src='apidocs/lib/swagger-client.js' type='text/javascript'></script>
-  <script src='apidocs/swagger-ui.js' type='text/javascript'></script>
-  <script src='apidocs/lib/highlight.7.3.pack.js' type='text/javascript'></script>
-  <script src='apidocs/lib/marked.js' type='text/javascript'></script>
+  <link href='apidoc/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='apidoc/css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='apidoc/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='apidoc/css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+  <link href='apidoc/css/screen.css' media='print' rel='stylesheet' type='text/css'/>
+  <script type="text/javascript" src="apidoc/lib/shred.bundle.js"></script>
+  <script src='apidoc/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/jquery.slideto.min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/jquery.wiggle.min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/handlebars-2.0.0.js' type='text/javascript'></script>
+  <script src='apidoc/lib/underscore-min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/backbone-min.js' type='text/javascript'></script>
+  <script src='apidoc/lib/swagger-client.js' type='text/javascript'></script>
+  <script src='apidoc/swagger-ui.js' type='text/javascript'></script>
+  <script src='apidoc/lib/highlight.7.3.pack.js' type='text/javascript'></script>
+  <script src='apidoc/lib/marked.js' type='text/javascript'></script>
 
   <!-- enabling this will enable oauth2 implicit scope support -->
-  <script src='apidocs/lib/swagger-oauth.js' type='text/javascript'></script>
+  <script src='apidoc/lib/swagger-oauth.js' type='text/javascript'></script>
   <script type="text/javascript">
     $(function () {
       var url = window.location.search.match(/url=([^&]+)/);
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "/api/docs"; //"http://petstore.swagger.io/v2/swagger.json";
+        url = "/api/doc"; //"http://petstore.swagger.io/v2/swagger.json";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
+        supportHeaderParams: true,
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
           if(typeof initOAuth == "function") {
@@ -52,7 +53,7 @@
           log("Unable to Load SwaggerUI");
         },
         docExpansion: "none",
-        sorter : "alpha"
+        //sorter : "alpha" //todo, not work?
       });
 
       function addApiKeyAuthorization() {

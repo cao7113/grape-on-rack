@@ -9,7 +9,7 @@ describe Acme::API do
 
   context 'swagger documentation root' do
     before do
-      get '/api/swagger_doc'
+      get '/api/docs'
       expect(last_response.status).to eq(200)
       @json = JSON.parse(last_response.body)
     end
@@ -22,7 +22,7 @@ describe Acme::API do
 
   context 'swagger documentation api' do
     before do
-      get '/api/swagger_doc'
+      get '/api/docs'
       expect(last_response.status).to eq(200)
       @apis = JSON.parse(last_response.body)['apis']
     end
@@ -30,7 +30,7 @@ describe Acme::API do
 
   context 'swagger entity documentation api' do
     before do
-      get '/api/swagger_doc/entities'
+      get '/api/docs/entities'
       expect(last_response.status).to eq(200)
       @apis = JSON.parse(last_response.body)['apis']
     end

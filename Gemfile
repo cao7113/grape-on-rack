@@ -1,19 +1,20 @@
-#source 'http://rubygems.org'
-source "http://ruby.taobao.org"
+# source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
 
-gem 'rack', '~> 1.6.0'
-gem 'grape', '~> 0.10.1'
-gem 'grape-entity', '~> 0.4.4'
-gem 'json', '~> 1.7.7'
-gem 'newrelic_rpm', '~> 3.5.4.34'
-gem 'newrelic-grape', '~> 1.1.0'
-gem 'rack-cors', '~> 0.2.8'
-gem 'grape-swagger', '~> 0.9.0'
+gem 'rack' # , '~> 1.6.0'
+gem 'grape' # , '~> 0.10.1'
+gem 'grape-entity' # , '~> 0.4.4'
+gem 'json' # , '~> 1.7.7'
+gem 'newrelic_rpm' # , '~> 3.5.4.34'
+gem 'newrelic-grape' # , '~> 1.1.0'
+gem 'rack-cors' # , '~> 0.2.8'
+gem 'grape-swagger' # , '~> 0.9.0'
 gem 'mime-types'
-gem 'nokogiri', '1.6.3.1'
+gem 'nokogiri' # , '1.6.3.1'
 
 group :development do
   gem 'rake', '~> 10.0.3'
+  # for file chanaged reloading
   gem 'guard', '~> 2.10.5'
   gem 'guard-bundler', '~> 2.1.0'
   gem 'guard-rack', '~> 2.0.0'

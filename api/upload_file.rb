@@ -1,8 +1,10 @@
 module Acme
   class UploadFile < Grape::API
-    format :json
-
+    # format :json #fix download spec test
     desc 'Upload an image.'
+    params do
+      requires :image_file, type: Rack::Multipart::UploadedFile
+    end
     post 'avatar' do
       {
         filename: params[:image_file][:filename],
@@ -11,6 +13,9 @@ module Acme
     end
 
     desc 'Upload and download a file of any format.'
+    params do
+      requires :file, type: Rack::Multipart::UploadedFile
+    end
     post 'download' do
       filename = params[:file][:filename]
       content_type MIME::Types.type_for(filename)[0].to_s
