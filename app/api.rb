@@ -2,6 +2,7 @@ module Acme
   class API < Grape::API
     prefix 'api'
     default_format :json # to support swagger docs .json data
+    mount ::Acme::Hi
     mount ::Acme::Ping
     mount ::Acme::RescueFrom
     mount ::Acme::PathVersioning

@@ -21,6 +21,11 @@ http://architects.dzone.com/articles/evolving-apis-using-grape-api
 http://code.dblock.org/2013/07/19/evolving-apis-using-grape-api-versioning.html
   * newrelic dig
   * deploy to heroku
+  * make a api render service like petstore swagger
+
+## Dig swagger ui
+
+http://localhost:9292/apidoc?url=http://localhost:9292/api/doc/ping.json#!/ping/GET_api_ping
 
 ## Rails
 

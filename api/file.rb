@@ -8,8 +8,12 @@ module Acme
         optional :url, type: String, desc: 'path or url'
       end
       get :file do
-        # support utf-8 todo ?
-        open(params[:url] || (::File.expand_path('../../Note.md', __FILE__))).read
+        url = params[:url] || ::File.expand_path('../../Note.md', __FILE__)
+        type = MIME::Types.type_for(url)[0].to_s
+        if type.start_with?('text/')
+          content_type "#{type};charset=UTF-8"
+        end
+        open(url).read
       end
     end
   end

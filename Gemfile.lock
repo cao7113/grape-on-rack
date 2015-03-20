@@ -144,6 +144,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
+    shotgun (0.9.1)
+      rack (>= 1.0)
     slop (3.6.0)
     spoon (0.0.4)
       ffi
@@ -188,3 +190,4 @@ DEPENDENCIES
   rspec (~> 3.1)
   rubocop (= 0.28.0)
   selenium-webdriver (~> 2.44.0)
+  shotgun
