@@ -17,6 +17,6 @@ module Acme
     mount ::Acme::Token
     mount ::Acme::User
     mount ::Acme::Tool
-    add_swagger_documentation api_version: 'v1', mount_path: '/doc' #, hide_documentation_path: true
+    add_swagger_documentation api_version: 'v1', mount_path: '/doc' # , hide_documentation_path: true
   end
 end

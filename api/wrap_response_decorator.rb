@@ -9,6 +9,7 @@ module Acme
       bodies = body_proxy.body.map do |body|
         { body: JSON.parse(body), status: status }.to_json
       end
+      headers['content-length'] = bodies.map(&:length).sum.to_s
       [200, headers, bodies]
     end
   end

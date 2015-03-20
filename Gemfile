@@ -20,6 +20,8 @@ group :development do
   gem 'guard-rack', '~> 2.0.0'
   gem 'rubocop', '0.28.0'
   gem 'byebug'
+  # gem 'shotgun'
+  # gem 'rerun'
 end
 
 group :test do

@@ -30,10 +30,10 @@ good sample: https://github.com/mateuszkosmider/todo-grape-api
 
 * strategy: basic, digest, oauth, others
 
+https://github.com/balauru/grape-oauth2-sample
 https://github.com/faber-lotto/grape_api_signature
 https://github.com/dblock/grape_warden
 https://github.com/cutalion/grape-api-example
-https://github.com/balauru/grape-oauth2-sample
 
 ## Rake tasks
 

@@ -6,7 +6,7 @@ class UserModel
     @created_at = Time.now
   end
 
-  @@store = {
+  @store = {
     mao: 1,
     deng: 2,
     jiang: 3,
@@ -16,7 +16,8 @@ class UserModel
 
   class << self
     def find(name)
-      age = @@store[(name.to_sym rescue nil)]
+      name = name.to_sym # rescue nil?
+      age = @store[name]
       new(name: name, age: age)
     end
   end
