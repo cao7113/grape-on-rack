@@ -11,14 +11,14 @@ module Acme
 
       desc 'complex params demo'
       params do
-        requires :name, type: Hash do
+        requires :name, type: Hash do #0.6.1下不支持带type
           optional :first, type: String
           optional :second, type: String
           exactly_one_of :first, :second
         end
       end
       get :complex do
-        params[:name]
+        params
       end
     end
   end
